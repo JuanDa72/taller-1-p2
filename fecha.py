@@ -1,3 +1,5 @@
+import roman
+
 DIAS_ENERO=31
 
 DIAS_MARZO=31
@@ -27,6 +29,26 @@ DIAS_FEBRERO_BISIESTO=29
 asoci={1:DIAS_ENERO,2:DIAS_FEBRERO,3:DIAS_MARZO,4:DIAS_ABRIL,5:DIAS_MAYO,6:DIAS_JUNIO,7:DIAS_JULIO,8:DIAS_AGOSTO,9:DIAS_SEPTIEMBRE,10:DIAS_OCTUBRE,11:DIAS_NOVIEMBRE,12:DIAS_DICIEMBRE}
 
 #Faltan las variables sobre festividades del año como DIA_TRABAJO etc
+
+DIA_DIA_TRABAJO=1
+
+MES_DIA_TRABAJO=5
+
+DIA_NAVIDAD=24
+
+MES_NAVIDAD=12
+
+DIA_FIN_ANHO=31
+
+MES_FIN_ANHO=12
+
+DIA_ANHO_NUEVO=1
+
+MES_ANHO_NUEVO=1
+
+DIA_HALLOWEEN=31
+
+MES_HALLOWEEN=10
 
 def es_bisiesto(a):
     if (a%4==0 and a%100!=0) or a%100==0:
@@ -104,6 +126,26 @@ def es_anterior(d1,m1,a1,d2,m2,a2):
 
   else:
     return False
+
+
+
+def es_igual(d1,m1,a1,d2,m2,a2):
+    if (a1==a2 and m1==m2 and d1==d2):
+        return True
+    else:
+        return False
+
+
+
+def siglo(a):
+    return int((a//100)+1)
+
+
+
+def siglo_numeral_romano(a):
+    n = int((a//100)+1)
+    return roman.toRoman(n)
+    
 
 
 
